@@ -1,0 +1,10 @@
+q
+colorscheme solarized-dark
+colorscheme solarized-light
+colorscheme default
+new
+nwq
+wq
+add ~/Music/
+save
+w

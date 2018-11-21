@@ -1,0 +1,109 @@
+[mediaplayer]
+command=$SCRIPT_DIR/mediaplayer.pl
+instance=cmus
+interval=5
+signal=10
+label=♪
+
+[volume]
+command=$SCRIPT_DIR/volume.sh
+interval=1
+signal=1
+#MIXER=[determined automatically]
+#SCONTROL=[determined automatically]
+##exposed format variables: ${SYMB}, ${VOL}, ${INDEX}, ${NAME}
+#LONG_FORMAT="${SYMB} ${VOL}% [${INDEX}:${NAME}]"
+#SHORT_FORMAT="${SYMB} ${VOL}% [${INDEX}]"
+#AUDIO_HIGH_SYMBOL='  '
+#AUDIO_MED_THRESH=50
+#AUDIO_MED_SYMBOL='  '
+#AUDIO_LOW_THRESH=0
+#AUDIO_LOW_SYMBOL='  '
+#AUDIO_DELTA=5
+#DEFAULT_COLOR="#ffffff"
+#MUTED_COLOR="#a0a0a0"
+#USE_ALSA_NAME=1
+#USE_DESCRIPTION=0
+## SUBSCRIBE=1 requires interval=persist and always uses LONG_FORMAT
+#SUBSCRIBE=0
+
+[bandwidth]
+command=$SCRIPT_DIR/bandwidth
+interval=persist
+markup=pango
+label=
+min_width=200
+align=left
+
+
+[weather]
+command=$SCRIPT_DIR/weathertest.pl
+interval=1800
+color=#A4C2F4
+
+##--
+#[weather]
+#command=$SCRIPT_DIR/weather.sh "84123"
+#interval=1800
+#color=#e97ac8
+
+#[weather]
+#command=curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | xargs echo
+#interval=1800
+#color=#A4C2F4
+#label=
+
+#[temperature]
+#command=$SCRIPT_DIR/temperature.pl
+#label=TEMP
+#interval=10
+#T_WARN=70
+#T_CRIT=90
+#SENSOR_CHIP=""
+#--
+
+[wireless]
+command=$SCRIPT_DIR/wifi.sh
+#INTERFACE=wlp2s0
+interval=10
+label=
+
+[ssid]
+label=
+command=echo "$(iw dev wlp2s0 link | grep SSID | cut -d " " -f 2-)"
+color=#d33682
+interval=5
+
+[battery]
+command=$SCRIPT_DIR/battery.pl
+interval=1
+#label=⚡
+
+[time]
+command=date +%T
+interval=1
+label=
+
+[arch-update]
+command=$SCRIPT_DIR/arch-update.py
+label=Updates:
+interval=3600
+markup=pango
+label=
+
+[shutdown_menu]
+full_text= 
+command=$SCRIPT_DIR/shutdown_menu.sh
+#FG_COLOR=#bbbbbb
+#BG_COLOR=#111111
+#HLFG_COLOR=#111111
+#HLBG_COLOR=#bbbbbb
+#BORDER_COLOR=#222222
+#ROFI_TEXT=Menu:
+#ROFI_OPTIONS=-width 11 -location 3 -hide-scrollbar -bw 2
+#ZENITY_TITLE=Menu
+#ZENITY_TEXT=Action:
+#ZENITY_OPTIONS=--column= --hide-header
+#ENABLE_CONFIRMATIONS=true (must be true or false)
+#LAUNCHER=rofi (must be rofi or zenity)
+#LOCKSCRIPT=i3lock --color=${BG_COLOR#"#"}
