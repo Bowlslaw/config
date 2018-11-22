@@ -1,3 +1,5 @@
+export LANG="en_US.UTF-8"
+
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=10000
@@ -63,4 +65,5 @@ alias install='sudo pacman -S '
 alias remove='sudo pacman -Rns '
 alias vim=nvim
 
+#POWERLEVEL9KMODE='awesome-fontconfig'
 source ~/opt/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
