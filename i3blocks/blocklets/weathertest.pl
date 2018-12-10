@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use 5.018;
 
-my $weather = `curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | xargs`;
+my $weather = `curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | xargs echo`;
 
 my $sign = " ";
 
@@ -19,14 +19,20 @@ elsif($weather =~ /mist/i) {
 elsif($weather =~ /overcast/i) {
 	$sign = " ";
 }
-elsif($weather =~ /.rain/i) {
+elsif($weather =~ /rain/i) {
 	$sign = " ";
 }
-elsif($weather =~ /.sun|clear./i) {
+elsif($weather =~ /sun/i) {
+	$sign = " ";
+}
+elsif($weather =~ /clear/i) {
 	$sign = " ";
 }
 elsif($weather =~ /.snow./i) {
 	$sign = " ";
+}
+elsif($weather =~ /sorry/i) {
+	$weather = ' ';
 }
 
 print $sign . $weather;

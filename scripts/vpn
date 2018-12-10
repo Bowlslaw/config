@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+openvpn --config /etc/openvpn/client/Windscribe-US-Central.ovpn \
+	--auth-user-pass /etc/openvpn/auth.txt &

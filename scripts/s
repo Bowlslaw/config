@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+# Call fzf and open selected file in vim
+
+output=$(find . -type f | fzf --preview 'head -50 {}') && vim $output

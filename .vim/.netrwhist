@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/etc/openvpn'
+let g:netrw_dirhist_2='/etc/openvpn/client'
+let g:netrw_dirhist_3='/usr/share/perl5/site_perl'
+let g:netrw_dirhist_4='/etc/openvpn/client'
+let g:netrw_dirhist_5='/etc/pm/config.d'
